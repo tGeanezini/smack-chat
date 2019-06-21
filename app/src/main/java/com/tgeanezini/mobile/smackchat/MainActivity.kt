@@ -1,5 +1,6 @@
 package com.tgeanezini.mobile.smackchat
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
@@ -53,15 +53,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onLoginClicked() {
+    private fun onLoginClicked() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun addChannelClicked() {
 
     }
 
-    fun addChannelClicked() {
+    private fun sendMessageClicked() {
 
-    }
-
-    fun sendMessageClicked() {
-        
     }
 }
